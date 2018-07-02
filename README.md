@@ -1,6 +1,15 @@
 # DNA_Alignment
-This program, given two DNA sequences S and T, finds the best possible alignment for the two sequences based on the highest "alignment score". This score depends on matches, mismatches, and gaps between letters with scores of +2, -1, and -5, respectively given to those alignments. In the final result, matches are represented by a "|", mismatches by a "*", and gaps by the string, s or t, which contains the character.
+This program, given two DNA sequences S and T, finds the best possible 
+alignment for the two sequences based on the highest "alignment score". This
+score depends on matches, mismatches, and gaps between letters which are given
+the scores of +2, -1, and -5, respectively. In the final result string, matches
+are represented by a "|", mismatches by a "*", and gaps by the string, s or t, 
+which contains the character.
 
-The alignment algorithm works recursively with dynamic programming. Because we are comparing DNA sequences, identical comparisons of substrings of the sequences occur frequently. This is then used to our advantage. We save the best score of these comparisons within an unordered_map. We then recursively call our function three times, cutting out the first character of the first string, then the first character of the second string, and finally the first character of both strings. When this is finished, we compare the scores, save the score of the best comparison within our unordered_map, and return it.
-
-Note to reader: This program was originally a project for one of my CS classes, so some starter code was given. This included only the align_result struct and the DNA_align print function. The algorithm, align function, and other code was written by me.
+The algorithm uses dynamic programming and memoizes each intermediate score 
+between substrings of S and T. Since DNA is composed of only four base 
+nucleotides, similar sequences repeat themselves and the comparisons can be
+stored in a dictionary. The function is called recursibely cutting the first
+character of one string, then the first character of the other string, and 
+finally the first character of both strings. At the end of each recursive call, 
+each of three scores are compared and the best aligment is returned.
