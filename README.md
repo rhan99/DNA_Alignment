@@ -1,4 +1,4 @@
-# DNA_Alignment
+# DNA Alignment
 This program, given two DNA sequences S and T, finds the best possible 
 alignment for the two sequences based on the highest "alignment score". This
 score depends on matches, mismatches, and gaps between letters which are given
